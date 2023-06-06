@@ -1,0 +1,228 @@
+* {
+  margin: 0;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+header {
+  color: #fff;
+}
+
+#navbar {
+  background: #000;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  justify-content: space-between;
+  padding: 1%;
+  width: 98%;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 50px;
+  height: 60px;
+  border-bottom: 1px solid gray;
+}
+#navbar__title {
+  cursor: pointer;
+}
+
+#navbar__navigations {
+  display: flex;
+  justify-content: space-around;
+  cursor: pointer;
+}
+li {
+  list-style: none;
+}
+li:hover {
+  color: darkslategrey;
+}
+#navbar__navigations li {
+  font-size: large;
+  font-weight: bold;
+}
+.navbar__button {
+  display: flex;
+  justify-content: end;
+  cursor: pointer;
+}
+.navbar__button button , #mobileNavigations__button {
+  background: #013220;
+  border-radius: 0.4rem;
+  width: 30%;
+  padding: 1rem;
+  color: #ffff;
+  border: none;
+  font-size: 114%;
+}
+#mobileNavigations__button{
+width:fit-content;
+font-size: medium;
+padding: .5rem;
+text-align: start;
+}
+.navbar__button :hover {
+  background-color: green;
+}
+
+#body {
+  background-color: #000;
+  color: white;
+  margin-top: 5.7rem;
+  align-items: center;
+  padding: 5rem;
+}
+#body__Intro {
+  display: flex;
+  gap: 5rem;
+}
+
+#body__image {
+  width: 100%;
+  height: 400px;
+  background-image: url('https://img.freepik.com/free-vector/illustrator-designer-man-holding-digital-tablet_107791-12062.jpg?w=740&t=st=1686026798~exp=1686027398~hmac=696775cea447a2b48756b8de8b7226cbef2d87af032ee394f6119e27173b4bda"');
+  background-size: 100% 100%;
+  border: 1px solid red;
+}
+.body__Intro__content {
+  display: grid;
+}
+.body__Intro__content h1 {
+  font-size: 4rem;
+}
+.body__Intro__content h2 {
+  font-size: 2rem;
+}
+.body__Intro__content p {
+  font-size: 1.3rem;
+  color: slategrey;
+  line-height: 1.9rem;
+  text-align: justify;
+}
+#change_role {
+  color: slategrey;
+}
+#change_role::after {
+  content: "";
+  animation: changeText 10s infinite;
+}
+
+@keyframes changeText {
+  0% {
+    content: "FrontEnd Developer";
+  }
+  20% {
+    content: "UI developer";
+  }
+  40% {
+    content: "Backend Developer";
+  }
+  60% {
+    content: "React Native Developer";
+  }
+  80% {
+    content: "Graphic Designer";
+  }
+  100% {
+    content: "MERN stack Developer";
+  }
+}
+footer {
+  background-color: rgba(0, 0, 0, 0.907);
+  color: rgba(255, 253, 253, 0.725);
+  padding: 2rem;
+  font-size: 1.2rem;
+}
+footer p {
+  text-align: center;
+  opacity: 70%;
+}
+
+#footer_socialMedia ul {
+  display: flex;
+  justify-content: center;
+  gap: 5rem;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+#footer_socialMedia ul i:hover {
+  transform: translateY(-3px);
+  cursor: pointer;
+  opacity: 40%;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+#dropdowIcon {
+  font-size: x-large;
+  cursor: pointer;
+  display: none;
+  align-items: end;
+}
+.mobileNavigations {
+  position: fixed;
+  z-index: 50;
+  right: 10px;
+  background-color: darkslateblue;
+  padding: 20px;
+  width: 10rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: larger;
+  display: none;
+}
+/* for medium device screen */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  #body__Intro {
+    display: block;
+    gap: 5rem;
+  }
+  #body {
+    margin-top: 1em;
+  }
+  .mobileNavigations {
+    display: none;
+  }
+  .navbar__button button {
+    width: 30%;
+    padding: .6rem;
+    font-size: medium;
+  }
+}
+
+/* for mobile screen */
+@media screen and (max-width: 768px) {
+  .mobileNavigations ul li :hover {
+    color: darkgray
+  }
+  .mobileNavigations ul li {
+    margin-bottom: 1rem;
+  }
+  #navbar {
+    display: flex;
+    justify-content: space-between;
+  }
+  #navbar__navigations,
+  .navbar__button {
+    display: none;
+  }
+
+  #body__Intro {
+    display: block;
+    padding: 1rem;
+  }
+  .body__Intro__content p {
+    margin-top: 30px;
+  }
+  #body {
+    margin-top: 4em;
+    padding: 1rem;
+  }
+  #dropdowIcon {
+    display: block;
+  }
+  .mobileNavigations {
+    display: none;
+  }
+}
